@@ -254,19 +254,35 @@ function postData(data, url) {
     });
 }
 
+
+
 function onSubmitProduct(event) {
-  // event.preventDefault();
+  event.preventDefault();
+  const data= event.target;
+  const name= data.name.value;
+  const description= data.description.value;
+  const precio= data.precio.value;
+  const product = {name,description,precio};
+
 
   // logica para la recuparacion de datos
 
-  postData(data, baseProductUrl);
+  postData( product, baseProductUrl);
 }
 
 function onSubmitClient(event) {
-  // event.preventDefault();
+  event.preventDefault();
+  const data= event.target;
+  const name= data.name.value;
+  const apellido= data.apellido.value;
+  const correo= data.correo.value;
+  const telefono= data.telefono.value;
+  const direccion= data.direccion.value;
+  const client = {name,apellido,correo,telefono,direccion};
+
   // logica para la recuparacion de datos
 
-  postData(data, baseClientUrl);
+  postData(client, baseClientUrl);
 }
 
 loadData(baseProductUrl, "product", "app-product"); //
